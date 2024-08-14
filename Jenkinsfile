@@ -37,6 +37,11 @@ pipeline {
             }
         }
         stage ('DeployToProd') {
+            input {
+                message "Ready to deploy in prod ?"
+                ok 'yes'
+                submitter 'i27academy' // ad or jenkins database.. username
+            }
             steps {
                 echo "***** Deploying  the application to dev env *********"
             }
